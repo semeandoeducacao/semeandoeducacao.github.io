@@ -860,7 +860,7 @@ ul.tag-cloud li {
 
 .opaqued {
     padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,160,0, 0.8);;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -870,7 +870,7 @@ ul.tag-cloud li {
 }
 
 .navbar-inverse.opaqued .navbar-nav .dropdown-menu {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,160,0, 0.8);;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
