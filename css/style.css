@@ -675,7 +675,7 @@ ul.tag-cloud li {
 /*-----------------------------------------------------------------------------------*/
 
 .navbar-inverse {
-    background-color: #202020;
+    background-color: #00a000;
     border: none;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -820,7 +820,7 @@ ul.tag-cloud li {
 }
 
 .navbar-inverse .navbar-nav .dropdown-menu {
-    background-color: #202020;
+    background-color: #00a000;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
