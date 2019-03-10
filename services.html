@@ -31,7 +31,6 @@
             "http://placehold.it/800x600",
             "http://placehold.it/800x600"
         ], {duration: 5000, fade: 500});
-
         $("#mapwrapper").gMap({ controls: false,
             scrollwheel: false,
             markers: [{     
@@ -67,7 +66,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html"><h1><span class="pe-7s-gleam bounce-in"></span> IMPACT</h1></a>
+                <a class="navbar-brand" href="index.html"><h1><span class="pe-7s-gleam bounce-in"></span>SEMEANDO EDUCAÇÃO</h1></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -78,256 +77,40 @@
                     <li><a href="portfolio.html">MANIFESTO</a></li>
                     <li><a href="about-us.html">NOSSO TIME</a></li>                   
                     <li><a href="contact-us.html">CONTATO</a></li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="project-item.html">Project Single</a></li>
-                            <li><a href="blog-item.html">Blog Single</a></li>
-                            <li class="active"><a href="404.html">404</a></li>
-                        </ul>
-                    </li>
                     <li><span class="search-trigger"><i class="fa fa-search"></i></span></li>
                 </ul>
             </div>
         </div>
     </header><!--/header-->
 
-    <section id="single-page-slider" class="no-margin">
-        <div class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="center gap fade-down section-heading">
-                                    <h2 class="main-title">Our Services</h2>
-                                    <hr>
-                                    <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
-                                </div>
-                            </div>   
-                        </div>
+ <div id="content-wrapper">
+        <section id="about-us" class="white">
+        	<div class="container">
+	            <div class="gap"></div>
+		<div class="gap"></div> 
+	            <div class="row">
+	                <div class="col-md-12">
+	                    <div class="center gap fade-down section-heading">
+	                        <br>
+				    <h2 class="main-title">
+CURSINHOS POPULARES</h2>
+	                        <hr>
+	                    </div>                
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-10 col-md-offset-1 fade-up">
+                        <p>Aqui voce encontra o cursinho popular mais próximo de você! <br> Pra que serve um cursinho popular ? Cursinhos populares são cursos oferecidos gratuitamente ou com mensalidades mais acessíveis, com aulas voltadas para a preparação de jovens para exames como o vestibular e o ENEM.</p>
+			            <p>Quer contribuir com esse mapa? conhece algum cursinho que não esta nesse mapa? mande um email para nós com o assunto “Mapa de Cursinhos”. Nosso endereço: semeando.edu@gmail.com</p>
+                         <link rel="stylesheet"href="https://developers.google.com/maps/documentation/javascript/demos/demos.css"><link rel="stylesheet"href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"><div id="map"></div><table id="data_table"class="display"cellspacing="0"width="100%"><thead><tr><th>Nome</th><th>Região</th><th>Endereco</th><th>Contatos</th></tr></thead></table><script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script><script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script><script>var cityCoordenates={lat:-23.5606826,lng:-46.6171579};var map=null;var data=[];var url='https://spreadsheets.google.com/feeds/list/1tS2zHoLsCi9xpPsnpm7JuprKE4G2JaOP1QD2p71vM9Q/1/public/basic?alt=json';function setPosition(latitude,longitude){map.setCenter({lat:latitude,lng:longitude});map.setZoom(17)}var generateToolTip=function(data){contatos="";return"<b style='font-size: large'> "+data.title+"</b> <br>"+"<b>Endereco:</b> "+data['endereço']+" <br>"};function parse_cursinho(content_data,title){var cursinho={};cursinho['title']=title.$t;var parsed_content=content_data.$t.split(': ');var key_=parsed_content[0].trim();var value_=null;for(i=1;i<parsed_content.length-1;i++){possible_value=parsed_content[i].split(',');value_=possible_value.slice(0,(possible_value.length-1));cursinho[key_]=value_.join(',');key_=possible_value.slice(possible_value.length-1,possible_value.length)[0].trim();if(i==parsed_content.length-2){cursinho[key_]=parsed_content[i+1]}}return cursinho}var lastinfoWindowData=null;function initMap(){map=new google.maps.Map(document.getElementById('map'),{center:cityCoordenates,scrollwheel:false,zoom:9});for(cursinho_id in data){cursinho=data[cursinho_id];cursinho=parse_cursinho(cursinho.content,cursinho.title);if(cursinho.latitude!=""||cursinho.longitude!=""){var infoWindowData=generateToolTip(cursinho);var infowindow=new google.maps.InfoWindow({content:infoWindowData});var marker=new google.maps.Marker({map:map,position:{lat:parseFloat(cursinho.latitude),lng:parseFloat(cursinho.longitude)},title:cursinho.nome});google.maps.event.addListener(marker,'click',(function(marker,infoWindowData,infowindow){return function(){if(lastinfoWindowData){lastinfoWindowData.close()}infowindow.setContent(infoWindowData);lastinfoWindowData=infowindow;infowindow.open(map,marker)}})(marker,infoWindowData,infowindow))}}}function initTable(){$(document).ready(function(){table=$('#data_table').DataTable();for(cursinho_id in data){var cursinho=data[cursinho_id];cursinho=parse_cursinho(cursinho.content,cursinho.title);var contatos="";if(cursinho.site!=""){contatos+="<a href="+cursinho.site+">Site</a> "}if(cursinho['páginadofacebook']!=""){contatos+="<a href="+cursinho['páginadofacebook']+">Facebook</a> "}if(contatos==""){contatos=cursinho.contatos}table.row.add(["<a href='javascript:void(0)' onclick=\'setPosition("+parseFloat(cursinho.latitude)+","+parseFloat(cursinho.longitude)+")\'>"+cursinho.title+"</a>",cursinho['distritoregiãomunícipio'],cursinho['endereço'],contatos]).draw(true)}})}$.fn.dataTable.ext.errMode='none';$.getJSON(url,function(json_data){data=json_data.feed.entry;initTable();initMap()});</script><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXg5-8fPuo1GnnB_owbN9QwWRlI1aWU3g&callback=initMap"async defer></script>
                     </div>
-                </div><!--/.item-->
-            </div><!--/.carousel-inner-->
-        </div><!--/.carousel-->
-    </section><!--/#main-slider-->
-
-    <div id="content-wrapper">
-        <section id="services" class="white">
-            <div class="container">
-            <div class="gap"></div>             
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-windows fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Windows Apps</h3>
-                                <p>Unfeeling so rapturous discovery he exquisite. Reasonably so middletons or impression by terminated. Old pleasure required removing elegance him had. Down she bore sing saw calm high.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-android fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Facebook Marketing</h3>
-                                <p>The who arrival end how fertile enabled. Brother she add yet see minuter natural smiling article painted. Themselves at dispatched interested insensible am be prosperous reasonably it. </p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-apple fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">iOS Development</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
-                <div class="gap"></div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-linux fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Linux Development</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-dribbble fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">Graphic Design</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-block">
-                            <div class="pull-left bounce-in">
-                                <i class="fa fa-google-plus fa fa-md"></i>
-                            </div>
-                            <div class="media-body fade-up">
-                                <h3 class="media-heading">SEO Services</h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.row-->
-            </div>
-            <div class="gap"></div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="center gap fade-down section-heading">
-                        <h2 class="main-title">Our Skills</h2>
-                        <hr>
-                        <p>Of an or game gate west face shed. ﻿no great but music too old found arose.</p>
-                    </div>               
-                </div>
-            </div>
-            <div class="container">     
-            <div class="row">            
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-red bounce-in">
-                            <div class="tile-header">
-                                <h3>Video Editing</h3>
-                                <span>Our cutting room floor is messy.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="65.5%" style="width: 65.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">65.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-cyan bounce-in">
-                            <div class="tile-header">
-                                <h3>Marketing</h3>
-                                <span>How well we can sell you and your brand.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="98.5%" style="width: 98.5%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">98.5</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-primary bounce-in">
-                            <div class="tile-header">
-                                <h3>Web Development</h3>
-                                <span>We love servers and stuff.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="90%" style="width: 90%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">90</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="tile-progress tile-pink bounce-in">
-                            <div class="tile-header">
-                                <h3>Coffee</h3>
-                                <span>We done make good joe, though.</span>
-                            </div>
-                            <div class="tile-progressbar">
-                                <span data-fill="10%" style="width: 10%;"></span>
-                            </div>
-                            <div class="tile-footer">
-                                <h4>
-                                    <span class="pct-counter counter">10</span>%
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div><!--/.row-->
-                <div class="gap"></div>
-            </div>
+	            </div>
+	            
+            </div>      
         </section>
-    </div>
-
+   </div> 
+    
     <div id="footer-wrapper">
-        <section id="bottom" class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 about-us-widget">
-                        <h4>Global Coverage</h4>
-                        <p>Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin.</p>
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Company</h4>
-                        <div>
-                            <ul class="arrow">
-                                <li><a href="#">Company Overview</a></li>
-                                <li><a href="#">Meet The Team</a></li>
-                                <li><a href="#">Our Awesome Partners</a></li>
-                                <li><a href="#">Our Services</a></li>
-                            </ul>
-                        </div>
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Latest Articles</h4>
-                        <div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="http://placehold.it/800x600" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post A</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
-                                </div>
-                            </div>
-                            <div class="media">
-                                <div class="pull-left">
-                                    <img class="widget-img" src="http://placehold.it/800x600" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <span class="media-heading"><a href="#">Blog Post B</a></span>
-                                    <small class="muted">Posted 14 April 2014</small>
-                                </div>
-                            </div>
-                        </div>  
-                    </div><!--/.col-md-3-->
-
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Come See Us</h4>
-                        <address>
-                            <strong>Ace Towers</strong><br>
-                            New York Ave,<br>
-                            New York, 215648<br>
-                            <abbr title="Phone"><i class="fa fa-phone"></i></abbr> 546 840654 05
-                        </address>
-                    </div> <!--/.col-md-3-->
-                </div>
-            </div>
-        </section><!--/#bottom-->
-
         <footer id="footer" class="">
             <div class="container">
                 <div class="row">
