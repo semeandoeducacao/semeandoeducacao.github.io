@@ -44,8 +44,46 @@
           	zoom: 14 });
     });
     </script>
-</head><!--/head-->
+<style>
+.article {
+  border: 1px solid #00B200;
+  border-radius: 10px;
+  width: 40%;
+  margin-bottom: 1rem;
+  font-size: 0rem;
+  font-family: verdana;
+  transition: 0.2s linear;
+  &:focus {
+    font-size: 1rem;
+    outline: 0;
+    header {
+      background: #00B200;
+    }
+    .text {
+      padding: 5px;
+    }
+  }
+  header {
+    background: #73116F;
+    border-radius: 0px 0px 0px 0px;
+    cursor: pointer;
+    padding: 5px 0px;
+    text-align: center;  
+    width: 100%;
+    transition: 0.2s linear;
+    h3 {
+      color: #fff;
+      font-family: cambria;
+      font-size: 1.2rem;
+      margin: 0 0 0 10px;
+    }
+  }
+}	
+</style>
+	
+	</head><!--/head-->
 <body>
+	
 <div id="preloader"></div>
     <header class="navbar navbar-inverse navbar-fixed-top " role="banner">
         <div class="container">
